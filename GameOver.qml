@@ -5,45 +5,8 @@ import QtQuick 2.0
 import QtQuick.Controls 1.5
 import QtQuick.Controls.Styles 1.4
 
-ColumnLayout
+Image
 {
-    Image
-    {
-        source: "qrc:///images/gameOver.png"
-        scale: 0.6
-    }
-    RowLayout
-    {
-        Layout.alignment: Qt.AlignHCenter
-
-        Button
-        {
-            id: buttonBack
-
-            text: "<Back"
-
-            onClicked:
-            {
-                repeater.reset()
-                gameState.state = "GameMenu"
-            }
-        }
-
-        Button
-        {
-            id: buttonRestart
-
-            Layout.alignment: Qt.AlignHCenter
-
-            text: "Restart"
-
-            onClicked:
-            {
-                isFirstClick = false
-                repeater.reset()
-                gameState.state = "GamePlay"
-            }
-        }
-    }
+    source: "qrc:///images/gameOver.png"
+    scale: 0.6
 }
-

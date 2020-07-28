@@ -25,6 +25,7 @@ Item
 
             onClicked:
             {
+                window.isFirstClick = false
                 repeater.reset()
                 gameState.state = "GamePlay"
             }

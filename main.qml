@@ -25,6 +25,19 @@ Window
     property string colorFieldLeave: "#FFFFFF"
     property bool isFirstClick: false
 
+
+    function setParams(columnN, rowN, minesC)
+    {
+        rowNumber = rowN
+        columnNumber = columnN
+        minesCount = minesC
+    }
+
+    Component.onCompleted:
+    {
+        gameState.state = "GameMenu"
+    }
+
     Item
     {
         id: gameState
@@ -37,6 +50,7 @@ Window
                 PropertyChanges { target: gameOverItem; visible: false }
                 PropertyChanges { target: menu; visible: false }
                 PropertyChanges { target: configMenu; visible: true }
+                PropertyChanges { target: playGameMenu; visible: false }
             },
             State
             {
@@ -45,6 +59,7 @@ Window
                 PropertyChanges { target: gameOverItem; visible: false }
                 PropertyChanges { target: menu; visible: true }
                 PropertyChanges { target: configMenu; visible: false }
+                PropertyChanges { target: playGameMenu; visible: false }
             },
             State
             {
@@ -53,6 +68,7 @@ Window
                 PropertyChanges { target: gameOverItem; visible: false }
                 PropertyChanges { target: menu; visible: false }
                 PropertyChanges { target: configMenu; visible: false }
+                PropertyChanges { target: playGameMenu; visible: true }
             },
             State
             {
@@ -61,13 +77,9 @@ Window
                 PropertyChanges { target: table; visible: true; enabled: false }
                 PropertyChanges { target: menu; visible: false }
                 PropertyChanges { target: configMenu; visible: false }
+                PropertyChanges { target: playGameMenu; visible: true }
             }
         ]
-    }
-
-    Component.onCompleted:
-    {
-        gameState.state = "GameMenu"
     }
 
     GameOver
@@ -87,7 +99,6 @@ Window
         anchors.centerIn: parent
         rows: rowNumber
         columns: columnNumber
-
         visible: false
         z: 1
 
@@ -119,5 +130,10 @@ Window
     ConfigMenu
     {
         id: configMenu
+    }
+
+    PlayGameMenu
+    {
+        id: playGameMenu
     }
 }

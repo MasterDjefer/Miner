@@ -83,11 +83,9 @@ Item
                 {
                     var width = parseInt(mapWidthField.text)
                     var height = parseInt(mapHeightField.text)
-                    var minesCountT = parseInt(minesCountField.text)
+                    var mines= parseInt(minesCountField.text)
 
-                    rowNumber = height
-                    columnNumber = width
-                    minesCount = minesCountT
+                    window.setParams(width, height, mines)
 
                     gameState.state = "GameMenu"
                 }
