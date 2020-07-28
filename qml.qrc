@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>GameOver.qml</file>
+        <file>Cell.qml</file>
+        <file>GameMenu.qml</file>
+        <file>ConfigMenu.qml</file>
+    </qresource>
+</RCC>
