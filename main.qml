@@ -31,6 +31,8 @@ Window
         rowNumber = rowN
         columnNumber = columnN
         minesCount = minesC
+
+        repeater.model = rowNumber * columnNumber
     }
 
     Component.onCompleted:
