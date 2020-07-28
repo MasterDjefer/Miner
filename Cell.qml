@@ -73,6 +73,12 @@ Rectangle
     {
         if (!flagImg.visible)
         {
+            if (!isFirstClick)
+            {
+                minesMap.generateMap(rowNumber, columnNumber, minesCount, index);
+                isFirstClick = true
+            }
+
             var minuesCountPerCell = minesMap.getCellValue(index)
 
             if (minuesCountPerCell === -1)

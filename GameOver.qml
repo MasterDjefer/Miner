@@ -39,8 +39,7 @@ ColumnLayout
 
             onClicked:
             {
-                minesMap.generateMap(rowNumber, columnNumber, minesCount, 0)
-
+                isFirstClick = false
                 repeater.reset()
                 gameState.state = "GamePlay"
             }

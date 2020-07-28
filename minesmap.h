@@ -48,13 +48,17 @@ public:
 
 public:
     explicit MinesMap(QObject *parent = nullptr);
+
+private:
     Cell::eCellInfo minesCountAroundCell(int pos, int &count);
+    void fillUntouchedFields(int pos);
 
 private:
     int mRowSize;
     int mColumnSize;
     int mMinesCount;
     QVector<Cell> mMap;
+    QVector<int> mUntouchedFields;
 };
 
 #endif // MINESMAP_H

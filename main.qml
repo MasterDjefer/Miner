@@ -17,12 +17,13 @@ Window
     width: 640
     height: 482
 
-    property int rowNumber: 16
-    property int columnNumber: 22
+    property int rowNumber: 10
+    property int columnNumber: 10
     property int minesCount: 20
     property int buttonSize: 60
     property string colorFieldEnter: "#E7E2E2"
     property string colorFieldLeave: "#FFFFFF"
+    property bool isFirstClick: false
 
     Item
     {

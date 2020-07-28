@@ -111,7 +111,7 @@ void MinesMap::generateMap(int rowSize, int columnSize, int minesCount, int star
 {
     mRowSize = rowSize;
     mColumnSize = columnSize;
-    mMinesCount = minesCount;
+    mMinesCount = minesCount    ;
 
     mMap.clear();
     mMap.fill(Cell(), rowSize * columnSize);
