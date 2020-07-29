@@ -80,7 +80,7 @@ Window
                 PropertyChanges { target: menu; visible: false }
                 PropertyChanges { target: configMenu; visible: false }
                 PropertyChanges { target: playGameMenu; visible: true }
-                StateChangeScript { script: gameOverItem.resetImgPos() }
+                StateChangeScript { script: gameOverItem.resetGameStuff() }
             }
         ]
     }
@@ -91,6 +91,12 @@ Window
 
         visible: false
         z: 2
+
+        function resetGameStuff()
+        {
+            resetImgPos()
+            isFirstClick = false
+        }
     }
 
 

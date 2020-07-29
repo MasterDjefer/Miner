@@ -164,13 +164,15 @@ Rectangle
 
     function openMine()
     {
-        if (minesMap.getCellValue(index) === -1)
+        var valueCell = minesMap.getCellValue(index)
+
+        if (valueCell !== -1 && flagImg.visible)
         {
-            if (flagImg.visible)
-            {
-                wrongMineImg.visible = true
-            }
-            else
+            wrongMineImg.visible = true
+        }else
+        if (valueCell === -1)
+        {
+            if (!flagImg.visible)
             {
                 mineImg.visible = true
             }
