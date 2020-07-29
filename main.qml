@@ -136,6 +136,28 @@ Window
                     itemAt(i).openMine()
                 }
             }
+
+            function checkGameOver()
+            {
+                var goodCellCount = model - minesCount
+
+                for (var i = 0; i < model; ++i)
+                {
+                    if (itemAt(i).isVisited)
+                    {
+                        goodCellCount--
+                    }
+                }
+
+                if (!goodCellCount)
+                {
+                    for (var i = 0; i < model; ++i)
+                    {
+                        itemAt(i).setFlagOnMine()
+                    }
+                    gameState.state = "GameOver"
+                }
+            }
         }
     }
 

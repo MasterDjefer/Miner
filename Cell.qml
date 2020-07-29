@@ -96,6 +96,8 @@ Rectangle
             else
             {
                 openNormalCell(minuesCountPerCell, false)
+
+                repeater.checkGameOver()
             }
         }
     }
@@ -138,7 +140,6 @@ Rectangle
         emitSignal(minesMap.getTopCellIndex(index))
         emitSignal(minesMap.getRightCellIndex(index))
         emitSignal(minesMap.getBottomCellIndex(index))
-
         emitSignal(minesMap.getTopLeftCellIndex(index))
         emitSignal(minesMap.getTopRightCellIndex(index))
         emitSignal(minesMap.getBottomRightCellIndex(index))
@@ -182,5 +183,15 @@ Rectangle
     function isFlagSet()
     {
         return flagImg.visible
+    }
+
+    function setFlagOnMine()
+    {
+        var valueCell = minesMap.getCellValue(index)
+
+        if (valueCell === -1)
+        {
+            flagImg.visible = true
+        }
     }
 }
