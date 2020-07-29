@@ -42,6 +42,14 @@ Rectangle
 
         visible: false
     }
+    Image
+    {
+        id: wrongMineImg
+        anchors.centerIn: parent
+        source: "qrc:///images/wrongMine.jpg"
+
+        visible: false
+    }
 
 
     MouseArea
@@ -158,7 +166,14 @@ Rectangle
     {
         if (minesMap.getCellValue(index) === -1)
         {
-            mineImg.visible = true
+            if (flagImg.visible)
+            {
+                wrongMineImg.visible = true
+            }
+            else
+            {
+                mineImg.visible = true
+            }
         }
     }
 

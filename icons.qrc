@@ -4,6 +4,7 @@
         <file>images/flag.png</file>
         <file>images/mine.jpg</file>
         <file>images/gameOver.png</file>
+        <file>images/wrongMine.jpg</file>
     </qresource>
     <qresource prefix="/images"/>
 </RCC>

@@ -22,6 +22,12 @@ Image
         anchors.fill: parent
         drag.target: parent
     }
+
+    function resetImgPos()
+    {
+        x = parent.width / 2 - width / 2
+        y = parent.height / 2 - height / 2
+    }
 }
 
 
