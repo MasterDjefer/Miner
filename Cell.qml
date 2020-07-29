@@ -120,6 +120,7 @@ Rectangle
     function openMineCell()
     {
         mineImg.visible = true
+        repeater.openAllMines()
         gameState.state = "GameOver"
     }
 
@@ -140,13 +141,29 @@ Rectangle
     {
         if (cellIndex !== -1)
         {
-            var cellValue = minesMap.getCellValue(cellIndex)
-
-            if (cellValue !== -1)
+            if (!repeater.itemAt(cellIndex).isFlagSet())
             {
-                if (!repeater.itemAt(cellIndex).isVisited)
-                    repeater.itemAt(cellIndex).autoOpen(cellValue, cellValue)
+                var cellValue = minesMap.getCellValue(cellIndex)
+
+                if (cellValue !== -1)
+                {
+                    if (!repeater.itemAt(cellIndex).isVisited)
+                        repeater.itemAt(cellIndex).autoOpen(cellValue, cellValue)
+                }
             }
         }
+    }
+
+    function openMine()
+    {
+        if (minesMap.getCellValue(index) === -1)
+        {
+            mineImg.visible = true
+        }
+    }
+
+    function isFlagSet()
+    {
+        return flagImg.visible
     }
 }

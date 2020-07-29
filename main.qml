@@ -88,7 +88,6 @@ Window
     {
         id: gameOverItem
 
-        anchors.centerIn: parent
         visible: false
         z: 2
     }
@@ -120,6 +119,14 @@ Window
             model: rowNumber * columnNumber
             delegate: Cell
             {
+            }
+
+            function openAllMines()
+            {
+                for (var i = 0; i < model; ++i)
+                {
+                    itemAt(i).openMine()
+                }
             }
         }
     }

@@ -7,6 +7,23 @@ import QtQuick.Controls.Styles 1.4
 
 Image
 {
+    x: parent.width / 2 - width / 2
+    y: parent.height / 2 - height / 2
+
     source: "qrc:///images/gameOver.png"
     scale: 0.6
+
+    Drag.active: dragArea.drag.active
+
+    MouseArea
+    {
+        id: dragArea
+
+        anchors.fill: parent
+        drag.target: parent
+    }
 }
+
+
+
+
