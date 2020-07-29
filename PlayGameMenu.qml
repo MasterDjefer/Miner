@@ -38,7 +38,7 @@ RowLayout
 
         onClicked:
         {
-            repeater.reset()
+            resetGameStuff()
             gameState.state = "GamePlay"
         }
     }

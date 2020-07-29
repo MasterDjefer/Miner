@@ -26,6 +26,13 @@ Window
     property bool isFirstClick: false
 
 
+    function resetGameStuff()
+    {
+        repeater.reset()
+        gameOverItem.resetImgPos()
+        isFirstClick = false
+    }
+
     function setParams(columnN, rowN, minesC)
     {
         rowNumber = rowN
@@ -71,6 +78,7 @@ Window
                 PropertyChanges { target: menu; visible: false }
                 PropertyChanges { target: configMenu; visible: false }
                 PropertyChanges { target: playGameMenu; visible: true }
+                StateChangeScript { script: resetGameStuff() }
             },
             State
             {
@@ -80,7 +88,6 @@ Window
                 PropertyChanges { target: menu; visible: false }
                 PropertyChanges { target: configMenu; visible: false }
                 PropertyChanges { target: playGameMenu; visible: true }
-                StateChangeScript { script: gameOverItem.resetGameStuff() }
             }
         ]
     }
@@ -91,12 +98,6 @@ Window
 
         visible: false
         z: 2
-
-        function resetGameStuff()
-        {
-            resetImgPos()
-            isFirstClick = false
-        }
     }
 
 

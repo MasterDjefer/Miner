@@ -25,7 +25,6 @@ Item
 
             onClicked:
             {
-                repeater.reset()
                 gameState.state = "GamePlay"
             }
         }
