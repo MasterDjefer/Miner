@@ -85,6 +85,8 @@ Item
                     var height = parseInt(mapHeightField.text)
                     var mines= parseInt(minesCountField.text)
 
+                    console.log(width)
+
                     window.setParams(width, height, mines)
 
                     gameState.state = "GameMenu"
